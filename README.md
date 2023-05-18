@@ -1,7 +1,7 @@
 # Piano-FCC
 Simple Piano that sounds sweet when you play the keys! Enjoy
 
-I made this Piano while learning HTML CSS on <a href="https://www.freecodecamp.com>FreeCodeCamp</a>
+I made this Piano while learning HTML CSS on <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
 
   ## Contribute
   
