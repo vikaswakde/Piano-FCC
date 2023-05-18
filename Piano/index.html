@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Piano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+   
+  </head>
+  <body>
+    <div id="piano">
+      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo" />
+      <div class="keys">
+        <div class="key" id="c"></div>
+        <div class="key black--key" id="c-sharp"></div>
+        <div class="key black--key" id="d-sharp"></div>
+        <div class="key" id="d"></div>
+        <div class="key black--key" id="d-sharp"></div>
+        <div class="key black--key" id="e-sharp"></div>
+        <div class="key black--key" id="f-sharp"></div>
+
+        <div class="key" id="e"></div>
+        <div class="key black--key" id="f-sharp"></div>
+        <div class="key black--key" id="g-sharp"></div>
+        <div class="key" id="g"></div>
+        <div class="key black--key" id="g-sharp"></div>
+        <div class="key black--key" id="a-sharp"></div>
+        <div class="key black--key" id="b-sharp"></div>
+
+        <div class="key" id="a"></div>
+        <div class="key black--key" id="a-sharp"></div>
+        <div class="key black--key" id="b-sharp"></div>
+        <div class="key" id="b"></div>
+        <div class="key black--key" id="c-sharp-high"></div>
+        <div class="key black--key" id="d-sharp-high"></div>
+        <div class="key black--key" id="e-sharp-high"></div>
+      </div>
+    </div>
+
+    <script>
+
+        const keys = document.querySelectorAll('.key');
+        
+        function playSound(e) {
+          const audio = document.querySelector(`audio[data-key="${e.target.id}"]`);
+          if (!audio) return;
+        
+          audio.currentTime = 0;
+          audio.play();
+        
+          e.target.classList.add('active');
+        
+          setTimeout(() => {
+            e.target.classList.remove('active');
+          }, 200);
+        }
+        
+        keys.forEach(key => {
+          key.addEventListener('click', playSound);
+        });
+            </script>
+    <!-- Add the following <audio> elements with the correct src attribute values -->
+
+    <audio data-key="c" src="/piano-keys-music/203458__tesabob2001__a3.mp3"></audio>
+    <audio data-key="c-sharp" src="/piano-keys-music/203459__tesabob2001__a5.mp3"></audio>
+    <audio data-key="d-sharp" src="/piano-keys-music/203460__tesabob2001__a4.mp3"></audio>
+    <audio data-key="d" src="/piano-keys-music/203471__tesabob2001__e4.mp3"></audio>
+    <audio data-key="d-sharp" src="/piano-keys-music/203461__tesabob2001__a3.mp3"></audio>
+    <audio data-key="e-sharp" src="/piano-keys-music/203476__tesabob2001__e5.mp3"></audio>
+    <audio data-key="f-sharp" src="/piano-keys-music/203463__tesabob2001__b3.mp3"></audio>
+    <audio data-key="a" src="/piano-keys-music/203464__tesabob2001__a5.mp3"></audio>
+    <audio data-key="b" src="/piano-keys-music/203465__tesabob2001__a4.mp3"></audio>
+    <audio data-key="a-sharp" src="/piano-keys-music/203466__tesabob2001__c3.mp3"></audio>
+    <audio data-key="b-sharp" src="/piano-keys-music/203467__tesabob2001__b5.mp3"></audio>
+    <audio data-key="g-sharp-high" src="/piano-keys-music/203478__tesabob2001__c5.mp3"></audio>
+    <audio data-key="g" src="/piano-keys-music/203480__tesabob2001__c5.mp3"></audio>
+  </body>
+  <footer><i>Made with Love</i> by <a href="https://twitter.com/vikaswakdeOS">Vikas Wakde</a></footer>
+</html>
